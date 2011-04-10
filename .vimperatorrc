@@ -1,0 +1,9 @@
+set guioptions=BNrb
+
+nnoremap ; :
+nnoremap ,t <esc>:tabnew<cr>
+nnoremap <C-left> <ESC>:tabprev<cr>
+nnoremap <C-right> <ESC>:tabnext<cr>
+inoremap <C-V> <C-V><C-V>
+nnoremap <C-C> <C-V><C-C>
+inoremap <C-A> <C-S-A>
