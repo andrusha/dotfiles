@@ -1,4 +1,4 @@
-This configs working with:
+This config files working with:
 
 * vim/gVim >= 7.3
 * zsh >= 4.3
