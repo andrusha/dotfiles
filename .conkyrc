@@ -1,0 +1,66 @@
+total_run_times 0
+# Style
+alignment top_right
+background yes
+border_width 1
+# Font
+use_xft yes
+uppercase no
+xftfont Consolas:size=12
+xftalpha 0.9
+draw_shades yes
+# Update
+double_buffer yes
+update_interval 2.0
+# Window
+own_window yes
+own_window_class conky-semi
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+# Graphs
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+# Colors
+default_color white
+default_outline_color white
+default_shade_color black
+gap_x 20
+gap_y 50
+cpu_avg_samples 2
+minimum_size 5 5
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+stippled_borders 0
+use_spacer none
+show_graph_scale no
+show_graph_range no
+TEXT
+${color slate grey}cpu   : $color$cpu%  $cpubar
+${cpugraph cpu0 20, 60 ffffff ffffff} ${cpugraph cpu1 20, 60 ffffff ffffff} ${cpugraph cpu2 20, 60 ffffff ffffff} ${cpugraph cpu3 20, 60 ffffff ffffff}
+${cpugraph cpu4 20, 60 ffffff ffffff} ${cpugraph cpu5 20, 60 ffffff ffffff} ${cpugraph cpu6 20, 60 ffffff ffffff} ${cpugraph cpu7 20, 60 ffffff ffffff}
+${color slate grey}ram   : $color$memperc% $membar
+$stippled_hr
+${color slate grey}root  : $color${fs_free /} ${fs_bar /}
+${color slate grey}files : $color${fs_free /media/files} ${fs_bar /media/files}
+$stippled_hr
+${color slate grey}down: $color${downspeed wlan0}${goto 140}${color slate grey}up: $color${upspeed wlan0}
+${downspeedgraph wlan0 20,120 000000 ffffff}${goto 140}${upspeedgraph wlan0 20,120 000000 ffffff} 
+$hr
+${color slate grey}top cpu:
+${color ddaa00} ${top name 1}$alignr${top cpu 1}
+$color ${top name 2}$alignr${top cpu 2}
+$color ${top name 3}$alignr${top cpu 3}
+$color ${top name 4}$alignr${top cpu 4}
+$color ${top name 5}$alignr${top cpu 5}
+$stippled_hr
+${color slate grey}top mem:
+${color ddaa00} ${top_mem name 1}$alignr${top_mem mem_res 1}
+$color ${top_mem name 2}$alignr${top_mem mem_res 2}
+$color ${top_mem name 3}$alignr${top_mem mem_res 3}
+$color ${top_mem name 4}$alignr${top_mem mem_res 4}
+$color ${top_mem name 5}$alignr${top_mem mem_res 5}
