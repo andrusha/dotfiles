@@ -202,6 +202,3 @@ let Tlist_Show_One_File = 1
 
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-
-" TAP project sync
-au BufWritePost {~/projects/tap/*,/home/andrew/projects/tap/*} ! unison Tap -auto -ui text -terse -batch -ignore="Name {.svn,.git,.pyc,.pyo}"
