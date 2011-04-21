@@ -1,4 +1,3 @@
-" System stuff
 set t_Co=256
 set nocompatible
 set nobackup
@@ -10,10 +9,32 @@ set noautowrite
 set autoread
 set lazyredraw
 
+" Vundle setup
+filetype off
+
+set rtp+=~/.vim/vundle.git
+call vundle#rc()
+
+Bundle "wombat256.vim"
+Bundle "Markdown"
+
+Bundle "surround.vim"
+Bundle "Align"
+Bundle "matchit.zip"
+Bundle "delimitMate.vim"
+
+Bundle "git.zip"
+Bundle "Gist.vim"
+
+Bundle "bufexplorer.zip"
+Bundle "taglist.vim"
+Bundle "The-NERD-tree"
+
+Bundle "pyflakes"
+
 " Turn on cool features 
 syntax on
-filetype on
-filetype plugin on
+filetype plugin indent on
 
 " Interface
 colors wombat256mod
@@ -117,9 +138,9 @@ nnoremap ; :
 nnoremap , ;
 
 " Easy copy-paste from clipboard
-nnoremap <silent> ,p "*p
-nnoremap <silent> ,P "*P
-nnoremap <silent> ,y "*yy
+nnoremap <silent> ,p "+p
+nnoremap <silent> ,P "+P
+nnoremap <silent> ,y "+yy
 
 " Shift on Tab
 nnoremap <Tab> >>
@@ -202,3 +223,4 @@ let Tlist_Show_One_File = 1
 
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
