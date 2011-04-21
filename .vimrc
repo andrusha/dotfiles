@@ -16,6 +16,7 @@ set rtp+=~/.vim/vundle.git
 call vundle#rc()
 
 Bundle "wombat256.vim"
+Bundle "Solarized"
 Bundle "Markdown"
 
 Bundle "surround.vim"
@@ -37,8 +38,14 @@ syntax on
 filetype plugin indent on
 
 " Interface
-colors wombat256mod
-hi ColorColumn guibg=#2d2d2d ctermbg=246
+if has('gui_running')
+    set background=dark
+    colors solarized
+else
+    colors wombat256mod
+    hi ColorColumn guibg=#2d2d2d ctermbg=246
+endif
+
 set showcmd	    "partial commands
 set showmatch	"brackets
 set nocul	    "show line
