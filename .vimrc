@@ -158,26 +158,6 @@ nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
 
-" Numbers -> Symbols
-ino 1 !
-ino 2 @
-ino 3 #
-ino 4 $
-ino 5 %
-ino 6 ^
-ino 7 &
-ino 8 *
-
-" Symbols -> Numbers
-ino ! 1
-ino @ 2
-ino # 3
-ino $ 4
-ino % 5
-ino ^ 6
-ino & 7
-ino * 8
-
 " Ctrl+Backspace, Ctrl+Delete word deletion
 inoremap <silent> <C-Backspace> <ESC><right>dbi
 inoremap <silent> <C-Delete>    <ESC><right>dwi
