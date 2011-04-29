@@ -40,6 +40,7 @@ filetype plugin indent on
 " Interface
 if has('gui_running')
     set background=dark
+    let g:solarized_contrast="high"
     colors solarized
 else
     colors wombat256mod
