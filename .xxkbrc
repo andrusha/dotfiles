@@ -1,0 +1,24 @@
+XXkb.group.base: 1
+XXkb.group.alt: 2
+XXkb.mainwindow.type: tray
+XXkb.mainwindow.label.enable:yes
+XXkb.mainwindow.label.font:-*-terminus-*-*-*-*-12-*-*-*-*-*-*-
+XXkb.mainwindow.label.background:#000000
+XXkb.mainwindow.label.foreground:#FFFFFF
+XXkb.mainwindow.enable: yes
+XXkb.mainwindow.appicon: yes
+XXkb.mainwindow.geometry: 15x15+3+3
+XXkb.image.path: /usr/share/xxkb/
+XXkb.mainwindow.image.1: en15.xpm
+XXkb.mainwindow.image.2: ru15.xpm
+XXkb.mainwindow.image.3: 
+XXkb.mainwindow.image.4:
+XXkb.mainwindow.xpm.1: en15.xpm
+XXkb.mainwindow.xpm.2: ru15.xpm
+XXkb.button.enable: no
+XXkb.controls.add_when_start: no
+XXkb.controls.add_when_create: yes
+XXkb.controls.add_when_change: yes
+XXkb.controls.focusout: yes
+XXkb.controls.two_state: yes
+XXkb.controls.mainwindow_delete: no
