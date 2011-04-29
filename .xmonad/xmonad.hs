@@ -121,11 +121,11 @@ myManageHook = composeAll [ matchAny v --> a | (v,a) <- myActions]
                       , ("buddy_list"     , doShift "im" <+> doFloat)
                       , ("File Transfers" , doShift "im" <+> doFloat)
                       , ("Skype"          , doShift "im" <+> doFloat)
-                      , ("qemu"           , doShift "vm" <+> doFloat)
                       , ("Evince"         , doShift "tools")
                       , ("Lanikai"        , doShift "mail")
                       , ("mathematica"    , doFloat)
                       , ("Mplayer"        , doShift "video" <+> doFloat)
                       , ("Chromium"       , doShift "web")
                       , ("XXkb"           , doIgnore)
+                      , ("qemu-system-x86_64", doShift "vm" <+> doFloat)
                       ]
