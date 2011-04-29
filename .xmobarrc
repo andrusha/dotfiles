@@ -17,10 +17,10 @@ Config { font = "xft:Consolas-10"
                                   "--high"   , "lightgreen",
                                   "-t"       , "Net: <rx> KbS"] 10
 
-                    , Run MultiCpu ["-L"       , "3"       ,
-                                    "-H"       , "50"      , 
-                                    "--normal" , "green"   , 
-                                    "--high"   , "red"] 10
+                    , Run MultiCpu ["-L"       , "4"          ,
+                                    "-H"       , "50"         , 
+                                    "--normal" , "lightgreen" , 
+                                    "--high"   , "orange"] 10
 
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
 
