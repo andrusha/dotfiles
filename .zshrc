@@ -34,6 +34,7 @@ alias grep='grep --color=auto'
 alias df='df --human-readable'
 alias du='du --human-readable'
 alias duh='du --all --max-depth=1|sort -n'
+alias d='dirs -v'
 
 # Keybindings
 bindkey "OH"      beginning-of-line   # Home
@@ -41,3 +42,7 @@ bindkey "OF"      end-of-line         # End
 bindkey "[1;5D"   backward-word       # Left arrow
 bindkey "[1;5C"   forward-word        # Right arrow
 bindkey "[3~"     delete-char         # Delete
+
+# exports
+export GDK_USE_XFT=1
+export QT_XFT=true
