@@ -57,9 +57,16 @@ myKeys = [ ("M-p"           , yeganesh)
          , ("<XF86AudioLowerVolume>", spawn "amixer -c0 -- sset Master 0.75dB-")
          , ("<XF86AudioRaiseVolume>", spawn "amixer -c0 -- sset Master 0.75dB+")
 
-         , ("M-s", spawnSelected defaultGSConfig ["chromium", "thunderbird", "pidgin", "skype"])
+         , ("M-s", spawnSelected defaultGSConfig ["gvim"])
+         , ("M-S", spawnSoft)
          , ("M-q", spawn "killall xxkb trayer; xmonad --recompile; xmonad --restart")
          ]
+
+spawnSoft = do
+    spawn "chromium"
+    spawn "thunderbird"
+    spawn "skype"
+    spawn "pidgin"
 
 -- Borders
 myBorderWidth :: Dimension
@@ -127,5 +134,5 @@ myManageHook = composeAll [ matchAny v --> a | (v,a) <- myActions]
                       , ("Mplayer"        , doShift "video" <+> doFloat)
                       , ("Chromium"       , doShift "web")
                       , ("XXkb"           , doIgnore)
-                      , ("qemu-system-x86_64", doShift "vm" <+> doFloat)
+                      , ("qemu-system-x86_64", doShift "vm" <+> doCenterFloat)
                       ]
