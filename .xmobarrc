@@ -33,14 +33,14 @@ Config { font = "xft:Consolas-10"
                                    "--low"    , "red"                       , 
                                    "-t"       , "Batt: <left>%"] 10
 
-                    , Run Volume "default" 
-                                 "Master" 
-                                 ["-t", "Vol: <volume>%"] 10
+--                    , Run Volume "pulse" 
+--                                 "Master" 
+--                                 ["-t", "Vol: <volume>%"] 10
 
                    , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %default:Master% <fc=#555>|</fc> %ULLI% | %multicpu% <fc=#555>|</fc> %memory% <fc=#555>|</fc> %wlan0% <fc=#555>|</fc> %battery% | <fc=white>%date%</fc>"
+       , template = "%StdinReader% }{  %ULLI% | %multicpu% <fc=#555>|</fc> %memory% <fc=#555>|</fc> %wlan0% <fc=#555>|</fc> %battery% | <fc=white>%date%</fc>"
 }
 
