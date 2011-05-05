@@ -232,3 +232,5 @@ let Tlist_Show_One_File = 1
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
+" Write with sudo
+command W w !sudo tee % > /dev/null
