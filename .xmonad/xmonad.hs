@@ -129,7 +129,7 @@ myManageHook = composeAll [ matchAny v --> a | (v,a) <- myActions]
                       , ("File Transfers" , doShift "im" <+> doFloat)
                       , ("Skype"          , doShift "im" <+> doFloat)
                       , ("Evince"         , doShift "tools")
-                      , ("Lanikai"        , doShift "mail")
+                      , ("Thunderbird"    , doShift "mail")
                       , ("mathematica"    , doFloat)
                       , ("Mplayer"        , doShift "video" <+> doFloat)
                       , ("Chromium"       , doShift "web")
