@@ -27,6 +27,7 @@ source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 # Customize to your needs...
 #
 export EDITOR=vim
+export PAGER=most
 export BROWSER=chromium-browser
 
 # Aliases
