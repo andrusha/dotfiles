@@ -36,6 +36,7 @@ alias df='df --human-readable'
 alias du='du --human-readable'
 alias duh='du --all --max-depth=1|sort -n'
 alias d='dirs -v'
+alias less='less --ignore-case'
 
 # Keybindings
 bindkey "OH"      beginning-of-line   # Home
