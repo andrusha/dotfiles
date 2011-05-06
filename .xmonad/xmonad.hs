@@ -1,7 +1,9 @@
 import XMonad
 import XMonad.Layout.NoBorders
+import XMonad.Layout.ResizableTile
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.ManageHelpers   (doCenterFloat, isDialog, isFullscreen, doFullFloat)
 import XMonad.Util.Run              (spawnPipe)
 import XMonad.Util.EZConfig         (additionalKeysP)
@@ -18,11 +20,12 @@ main = do
     xmonad $ defaultConfig
         {
           manageHook    = pbManageHook <+> myManageHook 
-        , layoutHook    = smartBorders $ avoidStruts $  layoutHook defaultConfig
+        , layoutHook    = myLayout
         , logHook       = dynamicLogWithPP $ xmobarPP
                             { ppOutput  = hPutStrLn xmproc
                             , ppTitle   = xmobarColor "white" "" . shorten 100
                             , ppCurrent = xmobarColor "white" "black" . pad
+                            , ppUrgent  = xmobarColor "orange" "" . xmobarStrip
                             , ppHidden  = pad
                             , ppSep     = xmobarColor "#555" "" " | "
                             , ppWsSep   = ""
@@ -37,6 +40,12 @@ main = do
         , workspaces         = myWorkspaces
         , focusFollowsMouse  = True
         } `additionalKeysP` myKeys
+
+myLayout = smartBorders $ avoidStruts (ResizableTall nmaster delta goldenRatio [])
+    where
+        nmaster = 1
+        goldenRatio = toRational $ 2/(1 + sqrt 5 :: Double)
+        delta = 3/100
 
 -- Progs spawn
 myTrayer = " sleep 5 && trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 7 --transparent true --tint 0x000000 --height 13"
