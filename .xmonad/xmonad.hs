@@ -66,6 +66,9 @@ myKeys = [ ("M-p"           , yeganesh)
          , ("<XF86AudioLowerVolume>", spawn "amixer -c0 -- sset Master 0.75dB-")
          , ("<XF86AudioRaiseVolume>", spawn "amixer -c0 -- sset Master 0.75dB+")
 
+         , ("<XF86Back>"    , prevWS)
+         , ("<XF86Forward>" , nextWS)
+
          , ("M-s", spawnSelected defaultGSConfig ["gvim"])
          , ("M-S", spawnSoft)
          , ("M-q", spawn "killall xxkb trayer; xmonad --recompile; xmonad --restart")
