@@ -32,6 +32,7 @@ Bundle "taglist.vim"
 Bundle "The-NERD-tree"
 
 Bundle "pyflakes"
+Bundle "VimDebug"
 
 " Turn on cool features 
 syntax on
