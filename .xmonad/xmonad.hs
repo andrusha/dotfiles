@@ -17,6 +17,8 @@ main = do
     xmproc <- spawnPipe "xmobar"
     spawn myTrayer
     spawn myXxkb
+    spawn myNetworkManager
+    spawn myDropbox
     xmonad $ defaultConfig
         {
           manageHook    = pbManageHook <+> myManageHook 
@@ -48,8 +50,10 @@ myLayout = smartBorders $ avoidStruts (ResizableTall nmaster delta goldenRatio [
         delta = 3/100
 
 -- Progs spawn
-myTrayer = " sleep 5 && trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 7 --transparent true --tint 0x000000 --height 13"
+myTrayer = "sleep 5 && trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 7 --transparent true --tint 0x000000 --height 13"
 myXxkb = "xxkb"
+myNetworkManager = "if [ ! \"$(pidof nm-applet)\" ]; then; nm-applet --sm-disable; fi;"
+myDropbox = "if [ ! \"$(pidof dropbox)\" ]; then; dropboxd; fi;"
 
 -- Keys
 myModMask :: KeyMask
