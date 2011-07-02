@@ -34,6 +34,9 @@ Bundle "The-NERD-tree"
 Bundle "pyflakes"
 Bundle "VimDebug"
 
+Bundle "coffee.vim"
+Bundle "vim-coffee-script"
+
 " Turn on cool features 
 syntax on
 filetype plugin indent on
