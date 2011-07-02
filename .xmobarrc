@@ -33,6 +33,12 @@ Config { font = "xft:Consolas-10"
                                    "--low"    , "red"                       , 
                                    "-t"       , "Batt: <left>%"] 10
 
+                    , Run CoreTemp ["-t", "<core0>°C", 
+                                    "-L", "40",
+                                    "-H", "65",
+                                    "-l", "lightblue",
+                                    "-h", "orange"] 50
+
 --                    , Run Volume "pulse" 
 --                                 "Master" 
 --                                 ["-t", "Vol: <volume>%"] 10
@@ -41,6 +47,6 @@ Config { font = "xft:Consolas-10"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{  %ULLI% | %multicpu% <fc=#555>|</fc> %memory% <fc=#555>|</fc> %wlan0% <fc=#555>|</fc> %battery% | <fc=white>%date%</fc>"
+       , template = "%StdinReader% }{  %ULLI% | %multicpu% %coretemp% <fc=#555>|</fc> %memory% <fc=#555>|</fc> %wlan0% <fc=#555>|</fc> %battery% | <fc=white>%date%</fc>"
 }
 
