@@ -1,13 +1,20 @@
 set t_Co=256
 set nocompatible
 set nobackup
-set undofile
 set backupdir=~/.vim/backup
 set directory=~/.vim/temp
-set undodir=~/.vim/temp/undo
 set noautowrite
 set autoread
 set lazyredraw
+set ttyfast
+set modeline 
+set backspace=indent,eol,start
+
+" Persistent undo vim >= 7.3
+if has("persistend_undo")
+    set undofile
+    set undodir=~/.vim/temp/undo
+endif
 
 " Vundle setup
 filetype off
@@ -36,6 +43,8 @@ Bundle "VimDebug"
 
 Bundle "coffee.vim"
 Bundle "vim-coffee-script"
+
+Bundle "ZenCoding.vim"
 
 " Turn on cool features 
 syntax on
@@ -184,16 +193,25 @@ ino <silent> <C-9> <ESC>:tablast<CR>
 nno <silent> <C-9> <ESC>:tablast<CR>
 
 " arrow keys move visible lines
-inoremap <Down> <C-R>=pumvisible() ? "\<lt>Down>" : "\<lt>C-O>gj"<CR>
-inoremap <Up> <C-R>=pumvisible() ? "\<lt>Up>" : "\<lt>C-O>gk"<CR>
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
+inoremap <silent> <Down> <C-R>=pumvisible() ? "\<lt>Down>" : "\<lt>C-O>gj"<CR>
+inoremap <silent> <Up> <C-R>=pumvisible() ? "\<lt>Up>" : "\<lt>C-O>gk"<CR>
+nnoremap <silent> <Down> gj
+nnoremap <silent> <Up> gk
+vnoremap <silent> <Down> gj
+vnoremap <silent> <Up> gk
+
+" buffer navigation with Ctrl+j, Ctrl+k
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
 
 " Ctrl+Backspace, Ctrl+Delete word deletion
 inoremap <silent> <C-Backspace> <ESC><right>dbi
 inoremap <silent> <C-Delete>    <ESC><right>dwi
+
+" Save file by Ctrl+S
+inoremap <silent> <C-S> <ESC>:w<CR>i
+nnoremap <silent> <C-S> <ESC>:w<CR>i
+vnoremap <silent> <C-S> <ESC>:w<CR>i
 
 function! MyTabLine()
     let s = '%#TabLine#'
@@ -238,3 +256,8 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " Write with sudo
 command W w !sudo tee % > /dev/null
+
+" Automatically add header on new files
+autocmd BufNewFile *.sh s-^-#!/bin/bash\r\r-
+autocmd BufNewFile *.py s-^-#!/usr/bin/python\r\r-
+autocmd BufNewFile *.rb s-^-#!/usr/bin/ruby\r\r-

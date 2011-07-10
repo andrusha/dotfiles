@@ -9,6 +9,7 @@ syntax clear pythonOperator
 syntax keyword pythonOperator is
 
 syntax match pyNiceOperator "\<in\>" conceal cchar=∈
+syntax match pyNiceOperator "\<not in\>" conceal cchar=∉
 syntax match pyNiceOperator "\<or\>" conceal cchar=∨
 syntax match pyNiceOperator "\<and\>" conceal cchar=∧
 syntax match pyNiceOperator "\<not " conceal cchar=¬
@@ -16,7 +17,6 @@ syntax match pyNiceOperator "<=" conceal cchar=≤
 syntax match pyNiceOperator ">=" conceal cchar=≥
 syntax match pyNiceOperator "==" conceal cchar=≡
 syntax match pyNiceOperator "!=" conceal cchar=≠
-syntax match pyNiceOperator "\<not in\>" conceal cchar=∉
 
 syntax keyword pyNiceStatement lambda conceal cchar=λ
 syntax keyword pyNiceStatement int conceal cchar=ℤ
