@@ -39,9 +39,9 @@ Config { font = "xft:Consolas-10"
                                     "-l", "lightblue",
                                     "-h", "orange"] 50
 
---                    , Run Volume "pulse" 
---                                 "Master" 
---                                 ["-t", "Vol: <volume>%"] 10
+                    --, Run Volume "default" 
+                    --             "master" 
+                    --             ["-t", "Vol: <volume>%"] 1
 
                    , Run StdinReader
                     ]
