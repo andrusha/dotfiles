@@ -10,6 +10,15 @@ set ttyfast
 set modeline 
 set backspace=indent,eol,start
 
+" Keymap & spellchecking for russian
+" set keymap=russian-jcukenwin
+" Langmap is better, because you can switch layout with OS bindings
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+setlocal spell spelllang=ru_yo,en_us
+
+" Remove intro message
+set shortmess+=I
+
 " Persistent undo vim >= 7.3
 if has("persistend_undo")
     set undofile
@@ -45,6 +54,7 @@ Bundle "coffee.vim"
 Bundle "vim-coffee-script"
 
 Bundle "ZenCoding.vim"
+Bundle "hexman.vim"
 
 " Turn on cool features 
 syntax on
@@ -213,6 +223,13 @@ inoremap <silent> <C-S> <ESC>:w<CR>i
 nnoremap <silent> <C-S> <ESC>:w<CR>i
 vnoremap <silent> <C-S> <ESC>:w<CR>i
 
+" Open .vimrc
+map ,v :vsp $MYVIMRC<CR>
+map ,V :source $MYVIMRC<CR>
+
+" Translate markdown to html
+nmap ,md :%!/usr/local/bin/markdown.pl --html4tags <cr>
+
 function! MyTabLine()
     let s = '%#TabLine#'
     for i in range(tabpagenr('$'))
@@ -255,7 +272,7 @@ let Tlist_Show_One_File = 1
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " Write with sudo
-command W w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
 
 " Automatically add header on new files
 autocmd BufNewFile *.sh s-^-#!/bin/bash\r\r-
