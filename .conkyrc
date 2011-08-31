@@ -41,8 +41,8 @@ show_graph_scale no
 show_graph_range no
 TEXT
 ${color slate grey}cpu   : $color$cpu%  $cpubar
-${cpugraph cpu0 20, 60 ffffff ffffff} ${cpugraph cpu1 20, 60 ffffff ffffff} ${cpugraph cpu2 20, 60 ffffff ffffff} ${cpugraph cpu3 20, 60 ffffff ffffff}
-${cpugraph cpu4 20, 60 ffffff ffffff} ${cpugraph cpu5 20, 60 ffffff ffffff} ${cpugraph cpu6 20, 60 ffffff ffffff} ${cpugraph cpu7 20, 60 ffffff ffffff}
+${cpugraph cpu1 20, 60 ffffff ffffff} ${cpugraph cpu2 20, 60 ffffff ffffff} ${cpugraph cpu3 20, 60 ffffff ffffff} ${cpugraph cpu4 20, 60 ffffff ffffff}
+${cpugraph cpu5 20, 60 ffffff ffffff} ${cpugraph cpu6 20, 60 ffffff ffffff} ${cpugraph cpu7 20, 60 ffffff ffffff} ${cpugraph cpu8 20, 60 ffffff ffffff}
 ${color slate grey}ram   : $color$memperc% $membar
 $stippled_hr
 ${color slate grey}root  : $color${fs_free /} ${fs_bar /}
