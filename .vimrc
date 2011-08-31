@@ -54,7 +54,12 @@ Bundle "coffee.vim"
 Bundle "vim-coffee-script"
 
 Bundle "ZenCoding.vim"
-Bundle "hexman.vim"
+
+Bundle "Haskell-Cuteness"
+Bundle "syntaxhaskell.vim"
+Bundle "indenthaskell.vim"
+
+Bundle "SingleCompile"
 
 " Turn on cool features 
 syntax on
@@ -148,8 +153,12 @@ nnoremap <silent> <F3> <ESC>:BufExplorer<CR>
 nnoremap <silent> <F4> <ESC>:Tlist<CR>
 
 " Make
-ino <silent> <F6> <ESC>:make<CR>
-nno <silent> <F6> <ESC>:make<CR>
+ino <silent> <F6> <ESC>:make -s<CR>
+nno <silent> <F6> <ESC>:make -s<CR>
+
+" Single Compile
+nmap <silent> <F9> :SCCompile<cr> 
+nmap <silent> <F10> :SCCompileRun<cr> 
 
 " Session manager
 nnoremap <silent> <F9> <ESC>:SessionOpen last<CR>
@@ -228,7 +237,7 @@ map ,v :vsp $MYVIMRC<CR>
 map ,V :source $MYVIMRC<CR>
 
 " Translate markdown to html
-nmap ,md :%!/usr/local/bin/markdown.pl --html4tags <cr>
+nmap <silent> ,md :%!/usr/local/bin/markdown.pl --html4tags <cr>
 
 function! MyTabLine()
     let s = '%#TabLine#'
