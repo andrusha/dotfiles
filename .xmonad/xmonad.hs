@@ -16,7 +16,6 @@ import qualified XMonad.StackSet as W
 main = do
     xmproc <- spawnPipe "xmobar"
     spawn myTrayer
-    spawn myXxkb
     spawn myNetworkManager
     spawn myDropbox
     xmonad $ defaultConfig
@@ -50,8 +49,7 @@ myLayout = smartBorders $ avoidStruts (ResizableTall nmaster delta goldenRatio [
         delta = 3/100
 
 -- Progs spawn
-myTrayer = "sleep 5 && trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 7 --transparent true --tint 0x000000 --height 18"
-myXxkb = "xxkb"
+myTrayer = "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 8 --transparent true --tint 0x000000 --height 17"
 myNetworkManager = "if [ ! \"$(pidof nm-applet)\" ] ; then nm-applet --sm-disable ; fi"
 myDropbox = "if [ ! \"$(pidof dropbox)\" ] ; then dropboxd ; fi"
 
@@ -75,7 +73,7 @@ myKeys = [ ("M-p"           , yeganesh)
 
          , ("M-s", spawnSelected defaultGSConfig ["gvim"])
          , ("M-S", spawnSoft)
-         , ("M-q", spawn "killall xxkb trayer; xmonad --recompile; xmonad --restart")
+         , ("M-q", spawn "killall trayer xmobar; xmonad --recompile; xmonad --restart")
          ]
 
 spawnSoft = do
@@ -149,6 +147,5 @@ myManageHook = composeAll [ matchAny v --> a | (v,a) <- myActions]
                       , ("mathematica"    , doFloat)
                       , ("Mplayer"        , doShift "video" <+> doFloat)
                       , ("Chromium"       , doShift "web")
-                      , ("XXkb"           , doIgnore)
                       , ("qemu-system-x86_64", doShift "vm" <+> doCenterFloat)
                       ]

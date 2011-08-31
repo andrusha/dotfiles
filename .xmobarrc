@@ -1,7 +1,7 @@
 Config { font = "xft:Consolas-10"
        , bgColor = "black"
        , fgColor = "grey"
-       , position = TopW L 93
+       , position = TopW L 92
        , commands = [ 
                       Run Weather "ULLI" 
                                   ["-t"      , "SPb <tempC>°C"         , 
@@ -39,14 +39,14 @@ Config { font = "xft:Consolas-10"
                                     "-l", "lightblue",
                                     "-h", "orange"] 50
 
-                    --, Run Volume "default" 
+                    --, Run Volume "Pulse" 
                     --             "master" 
                     --             ["-t", "Vol: <volume>%"] 1
-
                    , Run StdinReader
-                    ]
+                   , Run Kbd [("us", "US"), ("ru", "RU")]
+                   ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{  %ULLI% | %multicpu% %coretemp% <fc=#555>|</fc> %memory% <fc=#555>|</fc> %wlan0% <fc=#555>|</fc> %battery% | <fc=white>%date%</fc>"
+       , template = "%StdinReader% }{ %ULLI% | %multicpu% %coretemp% <fc=#555>|</fc> %memory% <fc=#555>|</fc> %wlan0% <fc=#555>|</fc> %battery% | <fc=white>%date%</fc> %kbd% "
 }
 
