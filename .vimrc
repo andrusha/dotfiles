@@ -7,7 +7,7 @@ set noautowrite
 set autoread
 set lazyredraw
 set ttyfast
-set modeline 
+set modeline
 set backspace=indent,eol,start
 
 " Keymap & spellchecking for russian
@@ -61,7 +61,7 @@ Bundle "indenthaskell.vim"
 
 Bundle "SingleCompile"
 
-" Turn on cool features 
+" Turn on cool features
 syntax on
 filetype plugin indent on
 
@@ -130,6 +130,7 @@ set expandtab
 set smartindent
 set autoindent
 set smarttab
+set listchars=tab:··,trail:»
 
 " Folding
 set foldmethod=indent
@@ -157,8 +158,8 @@ ino <silent> <F6> <ESC>:make -s<CR>
 nno <silent> <F6> <ESC>:make -s<CR>
 
 " Single Compile
-nmap <silent> <F9> :SCCompile<cr> 
-nmap <silent> <F10> :SCCompileRun<cr> 
+nmap <silent> <F9> :SCCompile<cr>
+nmap <silent> <F10> :SCCompileRun<cr>
 
 " Session manager
 nnoremap <silent> <F9> <ESC>:SessionOpen last<CR>
@@ -244,8 +245,8 @@ function! MyTabLine()
     for i in range(tabpagenr('$'))
         let k = i + 1
         let curbuf = tabpagebuflist(k)[tabpagewinnr(k) - 1]
-        let select = k == tabpagenr() 
-        
+        let select = k == tabpagenr()
+
         let fname = bufname(curbuf)
         if fname == ''
             let fname = '[No File]'
@@ -259,7 +260,7 @@ function! MyTabLine()
         let s .= getbufvar(curbuf, '&mod') ? ' +' : ''
         let s .= ' '.(select ? '%#TabLine#' : ''). '|'
     endfor
-    
+
     let s = strpart(s, 0, strlen(s)-1)
     let s .= '%#TabLineFill#%T'
     if tabpagenr('$') > 1
@@ -287,3 +288,8 @@ command! W w !sudo tee % > /dev/null
 autocmd BufNewFile *.sh s-^-#!/bin/bash\r\r-
 autocmd BufNewFile *.py s-^-#!/usr/bin/python\r\r-
 autocmd BufNewFile *.rb s-^-#!/usr/bin/ruby\r\r-
+
+" Fix memory leak
+au BufWinLeave * call clearmatches()
+
+au BufRead,BufEnter {/home/andrew/projects/TopTal/*,~/projects/TopTal/*} set noet list
