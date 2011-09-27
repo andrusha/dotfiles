@@ -28,7 +28,7 @@ source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 #
 export EDITOR=vim
 export PAGER=most
-export BROWSER=chromium-browser
+export BROWSER=chromium
 
 # Aliases
 alias grep='grep --color=auto'
@@ -53,6 +53,8 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
+
+s() { echo "$*" | tr " " "+" | xargs -I %s xdg-open "http://google.com/search?q=%s" }
 
 # Keybindings
 bindkey "OH"      beginning-of-line   # Home
