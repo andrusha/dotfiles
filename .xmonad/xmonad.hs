@@ -1,4 +1,8 @@
 import XMonad
+import XMonad.Layout.IM
+import XMonad.Layout.Named
+import XMonad.Layout.Tabbed
+import XMonad.Layout.Reflect
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ResizableTile
 import XMonad.Hooks.DynamicLog
@@ -10,6 +14,7 @@ import XMonad.Util.EZConfig         (additionalKeysP)
 import XMonad.Actions.CycleWS       (nextWS, prevWS, shiftToNext, shiftToPrev)
 import XMonad.Actions.GridSelect
 import System.IO
+import Data.Ratio                   ((%))
 
 import qualified XMonad.StackSet as W
 
@@ -42,11 +47,15 @@ main = do
         , focusFollowsMouse  = True
         } `additionalKeysP` myKeys
 
-myLayout = smartBorders $ avoidStruts (ResizableTall nmaster delta goldenRatio [])
+defaultLayout = smartBorders $ avoidStruts (ResizableTall nmaster delta goldenRatio [])
     where
         nmaster = 1
         goldenRatio = toRational $ 2/(1 + sqrt 5 :: Double)
         delta = 3/100
+tabbedLayout = noBorders $ simpleTabbed
+imLayout = smartBorders $ reflectHoriz $ gridIM (1%5) (Role "buddy_list")
+
+myLayout = (defaultLayout ||| tabbedLayout ||| imLayout)
 
 -- Progs spawn
 myTrayer = "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 8 --transparent true --tint 0x000000 --height 17"
@@ -74,6 +83,9 @@ myKeys = [ ("M-p"           , yeganesh)
          , ("M-s", spawnSelected defaultGSConfig ["gvim"])
          , ("M-S", spawnSoft)
          , ("M-q", spawn "killall trayer xmobar; xmonad --recompile; xmonad --restart")
+
+         , ("M-a", sendMessage MirrorShrink)
+         , ("M-z", sendMessage MirrorExpand)
          ]
 
 spawnSoft = do
