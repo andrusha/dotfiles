@@ -62,7 +62,3 @@ bindkey "OF"      end-of-line         # End
 bindkey "[1;5D"   backward-word       # Left arrow
 bindkey "[1;5C"   forward-word        # Right arrow
 bindkey "[3~"     delete-char         # Delete
-
-# exports
-export GDK_USE_XFT=1
-export QT_XFT=true
