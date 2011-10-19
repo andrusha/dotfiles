@@ -233,6 +233,8 @@ inoremap <silent> <C-S> <ESC>:w<CR>i
 nnoremap <silent> <C-S> <ESC>:w<CR>i
 vnoremap <silent> <C-S> <ESC>:w<CR>i
 
+vnoremap <silent> <BS> d
+
 " Open .vimrc
 map ,v :vsp $MYVIMRC<CR>
 map ,V :source $MYVIMRC<CR>
