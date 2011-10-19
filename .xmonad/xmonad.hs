@@ -58,7 +58,7 @@ imLayout = smartBorders $ reflectHoriz $ gridIM (1%5) (Role "buddy_list")
 myLayout = (defaultLayout ||| tabbedLayout ||| imLayout)
 
 -- Progs spawn
-myTrayer = "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 8 --transparent true --tint 0x000000 --height 17"
+myTrayer = "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand false --widthtype pixel --width 154 --heighttype pixel --height 17 --tint '0x000000' --alpha 0 --transparent true"
 myNetworkManager = "if [ ! \"$(pidof nm-applet)\" ] ; then nm-applet --sm-disable ; fi"
 myDropbox = "if [ ! \"$(pidof dropbox)\" ] ; then dropboxd ; fi"
 
@@ -160,4 +160,5 @@ myManageHook = composeAll [ matchAny v --> a | (v,a) <- myActions]
                       , ("Mplayer"        , doShift "video" <+> doFloat)
                       , ("Chromium"       , doShift "web")
                       , ("qemu-system-x86_64", doShift "vm" <+> doCenterFloat)
+                      , ("Odeskteam-qt4"  , doFloat)
                       ]
