@@ -20,7 +20,7 @@ setlocal spell spelllang=ru_yo,en_us
 set shortmess+=I
 
 " Persistent undo vim >= 7.3
-if has("persistend_undo")
+if has("persistent_undo")
     set undofile
     set undodir=~/.vim/temp/undo
 endif
@@ -61,6 +61,12 @@ Bundle "indenthaskell.vim"
 
 Bundle "SingleCompile"
 
+Bundle "rails.vim"
+Bundle "ruby.vim"
+Bundle "cucumber.zip"
+
+Bundle "octave.vim"
+
 " Turn on cool features
 syntax on
 filetype plugin indent on
@@ -73,6 +79,7 @@ if has('gui_running')
 else
     colors wombat256mod
     hi ColorColumn guibg=#2d2d2d ctermbg=246
+    set nospell
 endif
 
 set showcmd	    "partial commands
@@ -294,4 +301,4 @@ autocmd BufNewFile *.rb s-^-#!/usr/bin/ruby\r\r-
 " Fix memory leak
 au BufWinLeave * call clearmatches()
 
-au BufRead,BufEnter {/home/andrew/projects/TopTal/*,~/projects/TopTal/*} set noet list
+au BufRead,BufEnter {/home/andrew/projects/TopTal/*,~/projects/TopTal/*} set et list ts=2 sw=2 sts=2
