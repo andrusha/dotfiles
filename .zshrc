@@ -39,20 +39,22 @@ alias d='dirs -v'
 alias less='less --ignore-case'
 
 # git aliases (thx to Peteris Krumins)
-#alias ga='git add'
-#alias gp='git push'
-#alias gl='git log'
-#alias gs='git status'
-#alias gd='git diff'
-#alias gdc='git diff --cached'
-#alias gm='git commit -m'
-#alias gma='git commit -am'
-#alias gb='git branch'
-#alias gc='git checkout'
-#alias gra='git remote add'
-#alias grr='git remote rm'
-#alias gpu='git pull'
-#alias gcl='git clone'
+alias ga='git add'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
+
+alias chromium='chromium --memory-model=low --purge-memory-button'
 
 s() { echo "$*" | tr " " "+" | xargs -I %s xdg-open "http://google.com/search?q=%s" }
 
@@ -63,4 +65,4 @@ bindkey "[1;5D"   backward-word       # Left arrow
 bindkey "[1;5C"   forward-word        # Right arrow
 bindkey "[3~"     delete-char         # Delete
 
-[ -s "/home/andrew/dotfiles/.scm_breeze/scm_breeze.sh" ] && . "/home/andrew/dotfiles/.scm_breeze/scm_breeze.sh"
+#[ -s "/home/andrew/dotfiles/.scm_breeze/scm_breeze.sh" ] && . "/home/andrew/dotfiles/.scm_breeze/scm_breeze.sh"
