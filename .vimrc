@@ -13,8 +13,7 @@ set backspace=indent,eol,start
 " Keymap & spellchecking for russian
 " set keymap=russian-jcukenwin
 " Langmap is better, because you can switch layout with OS bindings
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-setlocal spell spelllang=ru_yo,en_us
+setlocal spell spelllang=en_us
 
 " Remove intro message
 set shortmess+=I
@@ -77,8 +76,9 @@ if has('gui_running')
     let g:solarized_contrast="high"
     colors solarized
 else
-    colors wombat256mod
-    hi ColorColumn guibg=#2d2d2d ctermbg=246
+    colors solarized
+    "colors wombat256mod
+    "hi ColorColumn guibg=#2d2d2d ctermbg=246
     set nospell
 endif
 
@@ -137,7 +137,6 @@ set expandtab
 set smartindent
 set autoindent
 set smarttab
-set listchars=tab:··,trail:»
 
 " Folding
 set foldmethod=indent
@@ -301,4 +300,5 @@ autocmd BufNewFile *.rb s-^-#!/usr/bin/ruby\r\r-
 " Fix memory leak
 au BufWinLeave * call clearmatches()
 
-au BufRead,BufEnter {/home/andrew/projects/TopTal/*,~/projects/TopTal/*} set et list ts=2 sw=2 sts=2
+au BufRead,BufEnter *.rb set et list ts=2 sw=2 sts=2
+au BufRead,BufEnter {/Users/andrew/Projects/TopTal/*,~/Projects/TopTal/*} set et list ts=2 sw=2 sts=2
