@@ -1,0 +1,22 @@
+:set +t
+:set prompt "> "
+
+:m + Data.List
+:m + Control.Arrow
+:m + Control.Applicative
+:m + Control.Monad
+:m + Data.Function
+:m + Data.Monoid
+
+:set -Werror
+:set -fwarn-deprecated-flags
+:set -fwarn-deprecations
+:set -fwarn-incomplete-patterns
+:set -fwarn-missing-fields
+:set -fwarn-missing-methods
+:set -fwarn-monomorphism-restriction
+:set -fwarn-overlapping-patterns
+:set -fwarn-unrecognised-pragmas
+:set -fwarn-unused-imports
+:set -fwarn-unused-matches
+:set -fwarn-warnings-deprecations
