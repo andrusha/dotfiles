@@ -22,13 +22,11 @@ export ZSH_THEME="nicoulaj"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ~/Projects/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Customize to your needs...
 #
 export EDITOR=vim
-export PAGER=most
-export BROWSER=chromium
 
 # Aliases
 alias grep='grep --color=auto'
@@ -54,8 +52,6 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 
-alias chromium='chromium --memory-model=low --purge-memory-button'
-
 s() { echo "$*" | tr " " "+" | xargs -I %s xdg-open "http://google.com/search?q=%s" }
 
 # Keybindings
@@ -64,5 +60,3 @@ bindkey "OF"      end-of-line         # End
 bindkey "[1;5D"   backward-word       # Left arrow
 bindkey "[1;5C"   forward-word        # Right arrow
 bindkey "[3~"     delete-char         # Delete
-
-#[ -s "/home/andrew/dotfiles/.scm_breeze/scm_breeze.sh" ] && . "/home/andrew/dotfiles/.scm_breeze/scm_breeze.sh"
