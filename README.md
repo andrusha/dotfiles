@@ -1,4 +1,7 @@
-This config files working with:
+Versions
+--------
+
+This config files working with:  
 
 * XMonad >= 0.9.2
 * XMobar >= 0.13
@@ -7,3 +10,13 @@ This config files working with:
 * vimperator >= 3.0
 * conky >= 1.8
 * evrouter >= 0.4
+
+Installation
+------------
+
+Clone git repo, then:  
+
+$ `git submodule init`  
+$ `git submodule update`  
+$ `make install`  
+

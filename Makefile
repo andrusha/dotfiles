@@ -1,4 +1,4 @@
 install:
 	for config in .*; do \
-		ln -s `pwd`/$x ~/$x; \
+		ln -s `pwd`/$config ~/$config; \
 	done
