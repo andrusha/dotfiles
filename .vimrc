@@ -30,6 +30,8 @@ filetype off
 set rtp+=~/.vim/vundle.git
 call vundle#rc()
 
+Bundle 'gmarik/vundle'
+
 Bundle "wombat256.vim"
 Bundle "Solarized"
 Bundle "Markdown"
@@ -65,6 +67,8 @@ Bundle "ruby.vim"
 Bundle "cucumber.zip"
 
 Bundle "octave.vim"
+
+Bundle "AutoComplPop"
 
 " Turn on cool features
 syntax on
