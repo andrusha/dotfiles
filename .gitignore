@@ -1,2 +1,5 @@
 .vim/bundle
+.vim/vundle.git
+.vim/temp
+.vim/.*
 *.pyc

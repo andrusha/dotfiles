@@ -21,6 +21,7 @@ export ZSH_THEME="nicoulaj"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+source ~/.profile
 source $ZSH/oh-my-zsh.sh
 source ~/Projects/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
@@ -31,8 +32,7 @@ export EDITOR=vim
 # Aliases
 alias grep='grep --color=auto'
 alias df='df --human-readable'
-alias du='du --human-readable'
-alias duh='du --all --max-depth=1|sort -n'
+alias duh='du -h -s -d 1 | sort -h'
 alias d='dirs -v'
 alias less='less --ignore-case'
 
@@ -60,3 +60,5 @@ bindkey "OF"      end-of-line         # End
 bindkey "[1;5D"   backward-word       # Left arrow
 bindkey "[1;5C"   forward-word        # Right arrow
 bindkey "[3~"     delete-char         # Delete
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
